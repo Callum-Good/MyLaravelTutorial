@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Todo;
 class TodosController extends Controller
 {
     /**
@@ -52,7 +52,7 @@ class TodosController extends Controller
         $todo        = new Todo;
         $todo->title = $request->title;
         $todo->body  = $request->body;
-        $todo->user_id = Auth::id();
+ 
         $todo->save(); // save it to the database.
         //Redirect to a specified route with flash message.
         return redirect()
